@@ -28,15 +28,21 @@ public class Main {
         boolean czyAWieksza2 = liczbaB.compareTo(liczbaA) > 0;
 
         String napis = "napis";
-        String znak = "b";
+        String znak = "n";
+
         System.out.println("Czy w napisie '"+napis+"' jest znak :" + znak);
-        boolean czyZawiera = napis.contains("a");
+        boolean czyZawiera = napis.contains(znak);
+
         System.out.println(czyZawiera);
 
-        // zadanie1 znak = "b" i powinno być false
         // zadanie2 stworzenie metody o nazwie  czyNapisZawieraZnak(String napis,char znak)
         // metoda ma zwrócić return false/true
+
+        System.out.println(czyNapisZawieraZnak("Java","v"));
     }
 
+    public static boolean czyNapisZawieraZnak(String napis, CharSequence znak) {
+        return napis.contains(znak);
+    }
 
 }
