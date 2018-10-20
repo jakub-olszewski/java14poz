@@ -43,6 +43,20 @@ public class App {
 
         System.out.println(informacjeOPrzedmiocie("Frytki",5));
         //"Frytki: 5 zł"
+
+
+        // przyklad uzycia konstruktora
+        // powolujemy do zycia obiekt Kanapka
+        Kanapka kanapkaZSerem = new Kanapka();
+
+        String skladKanapkiZSerem = kanapkaZSerem.podajSklad();
+        System.out.println("Konstruktor przyklad");
+        System.out.println("====================");
+        System.out.println(skladKanapkiZSerem);
+        // zjesc
+        // przygotowac
+        // poczestowac
+        // +rodzaj pieczywa, rozmiar, kształt
     }
 
     /**
