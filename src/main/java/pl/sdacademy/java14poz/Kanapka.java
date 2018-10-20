@@ -19,13 +19,30 @@ public class Kanapka {
         iloscSkladnikow = 2;
     }
 
+    /**
+     * Konstruktor argumentowy
+     * @param podanySkladTworzonejKanapki
+     */
     public Kanapka(String podanySkladTworzonejKanapki){
         sklad = podanySkladTworzonejKanapki;
     }
 
-    // napisz konstruktor z argumentem iloscSkladnikow
-    // napisz konstruktor z argumentem sklad i iloscSkladniow
-    // utworz kanapki za pomocą tych konstruktorów w App
+    /**
+     * Konstruktor argumentowy
+     * @param podanySkladTworzonejKanapki
+     */
+    public Kanapka(String podanySkladTworzonejKanapki,int podanaIloscSkladnik){
+        sklad = podanySkladTworzonejKanapki;
+        iloscSkladnikow = podanaIloscSkladnik;
+    }
+
+    /**
+     * Konstruktor argumentowy
+     * @param podanaIloscSkladnikow
+     */
+    public Kanapka(int podanaIloscSkladnikow){
+        iloscSkladnikow = podanaIloscSkladnikow;
+    }
 
     /**
      * Metoda podajaca sklad kanapki

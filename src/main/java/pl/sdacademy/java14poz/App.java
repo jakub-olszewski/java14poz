@@ -59,6 +59,10 @@ public class App {
         // przygotowac
         // poczestowac
         // +rodzaj pieczywa, rozmiar, kształt
+
+        Kanapka kanapkaZSalata = new Kanapka("salata",1);
+        Kanapka kanapkaZNieznanymSkladem = new Kanapka(8);
+
     }
 
     /**
