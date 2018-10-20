@@ -51,6 +51,7 @@ public class App {
         return "pomidorowa";
     }
 
+
     /**
      * Przyklad metody z argumentem
      *
