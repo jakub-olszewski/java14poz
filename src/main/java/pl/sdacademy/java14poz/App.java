@@ -31,5 +31,29 @@ public class App {
         // deklaracje i inicjalizacje
 
         System.out.println(Math.PI);
+        // tworzenie zmiennej użytej w println
+        String coZjemy = "Co na obiad?";
+        System.out.println(coZjemy);
+        // tworzenie zmiennej użytej w println
+        String obiad = coNaObiad();
+        System.out.println(obiad);
+        System.out.println(poproszeFrytki(20));
+    }
+
+    /**
+     * Przyklad metody bez argumentowej
+     * @return co na obiad
+     */
+    public static String coNaObiad(){
+        return "pomidorowa";
+    }
+
+    /**
+     * Przyklad metody z argumentem
+     * @param kwota pieniedzy jakie dajemy
+     * @return reszte z tranzakcji
+     */
+    public static int poproszeFrytki(int kwota){
+        return kwota-5;
     }
 }
