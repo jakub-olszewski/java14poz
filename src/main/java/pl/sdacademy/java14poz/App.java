@@ -40,6 +40,9 @@ public class App {
         System.out.println(poproszeFrytki(20));
         // wykonanie metody sumaLiczb
         System.out.println(sumaLiczb(1,2,3));
+
+        System.out.println(informacjeOPrzedmiocie("Frytki",5));
+        //"Frytki: 5 zł"
     }
 
     /**
@@ -72,5 +75,14 @@ public class App {
      */
     public static int sumaLiczb(int a, int b, int c) {
         return a + b + c;
+    }
+
+    /**
+     * Metoda przyjmuje nazwe przedmiotu i jego cene
+     * wypisuje NazwaPrzedmiotu: cena zl
+     * @return
+     */
+    public static String informacjeOPrzedmiocie(String przedmiot, int cena){
+        return przedmiot + ": " + cena + " zł";
     }
 }
