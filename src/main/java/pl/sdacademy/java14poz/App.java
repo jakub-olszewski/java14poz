@@ -63,6 +63,7 @@ public class App {
         Kanapka kanapkaZSalata = new Kanapka("salata",1);
         Kanapka kanapkaZNieznanymSkladem = new Kanapka(8);
 
+
     }
 
     /**
