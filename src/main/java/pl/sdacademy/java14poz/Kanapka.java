@@ -9,13 +9,23 @@ package pl.sdacademy.java14poz;
 public class Kanapka {
 
     String sklad;// deklaracja zmiennej sklad
+    int iloscSkladnikow;
 
     /**
      * Konstruktor kanapki bezargumentowy - domyślnym
      */
     public Kanapka(){
         sklad = "ser,pomidor";// inicjalizacja zmiennej sklad
+        iloscSkladnikow = 2;
     }
+
+    public Kanapka(String podanySkladTworzonejKanapki){
+        sklad = podanySkladTworzonejKanapki;
+    }
+
+    // napisz konstruktor z argumentem iloscSkladnikow
+    // napisz konstruktor z argumentem sklad i iloscSkladniow
+    // utworz kanapki za pomocą tych konstruktorów w App
 
     /**
      * Metoda podajaca sklad kanapki

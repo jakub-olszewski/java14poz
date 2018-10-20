@@ -47,6 +47,8 @@ public class App {
 
         // przyklad uzycia konstruktora
         // powolujemy do zycia obiekt Kanapka
+        // ponizej tworzenie kanapki
+        // z wykorzystaniem konsturktora domyslnego
         Kanapka kanapkaZSerem = new Kanapka();
 
         String skladKanapkiZSerem = kanapkaZSerem.podajSklad();
