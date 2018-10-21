@@ -16,6 +16,19 @@ public class Zamowienie {
         cena = podajCene;
     }
 
+    public Zamowienie(int podajNumer, Double podajCene) {
+        numer = podajNumer;
+        cena = podajCene.floatValue();
+    }
+
+    @Override
+    public String toString() {
+        return "Zamowienie{" +
+                "numer=" + numer +
+                ", cena=" + cena +
+                '}';
+    }
+
     public float pobierzCene(){
         return cena;
     }
