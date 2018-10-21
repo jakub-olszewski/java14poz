@@ -16,6 +16,16 @@ public class Main {
         System.out.println(janusz);
         System.out.println(kanapkazSzynka);
 
+        StringBuilder budujNapis = new StringBuilder();
+        budujNapis.append("=====================\n");
+        budujNapis.append("== Lista Zamówień ===\n");
+        budujNapis.append("=====================\n");
+
+        System.out.println(budujNapis.toString());
+
+        // zadanie utworz string buildera i
+        // za pomoca metody append dodaj napisy ponizej do siebie
+
         // zdanie stworz 5 zamowien i oblicz sume tych zamowień
         // i wysietlic zamowienia na ekranie oraz sume zamowien
         // trzeba zrobić metode toString() w zamowieniu
@@ -42,8 +52,12 @@ public class Main {
         float cena5 = zamowienie5.pobierzCene();
         suma = cena1 + cena2 + cena3 + cena4 + cena5; // ? czy to jest poprawnie ?
 
+        // formatowanie do 2 cyfr po przecinku
+        System.out.printf("Suma: %.2f zł",suma);
+        // podpowiedź: użyj String.format() dziala podobnie jak linijka wyżej
 
-        System.out.println("Suma: "+suma);
+        //System.out.println("Suma: "+suma);
+        // brak formatowania wiele cyfr po przecinku
     }
 
 }
