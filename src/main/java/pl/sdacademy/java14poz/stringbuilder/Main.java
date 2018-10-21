@@ -21,6 +21,13 @@ public class Main {
         float suma = 5.12000123f;
         System.out.printf("Suma: %.2f zł",suma);
 
+
+        StringBuilder budujNapis = new StringBuilder();
+        budujNapis.append("\na").append('\n');
+        budujNapis.append("\\");// consola: \
+        budujNapis.append("\"");// consola: "
+        System.out.println(budujNapis);
+
 //        System.out.printf(napis,12);
 //        System.out.println("napis");
 //        System.out.println(napisNull);

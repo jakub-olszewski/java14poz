@@ -1,4 +1,4 @@
-package pl.sdacademy.java14poz;
+package pl.sdacademy.java14poz.obiekty;
 
 /**
  * Kanapka

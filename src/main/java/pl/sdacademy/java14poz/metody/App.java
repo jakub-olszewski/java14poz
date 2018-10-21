@@ -1,6 +1,8 @@
-package pl.sdacademy.java14poz;
+package pl.sdacademy.java14poz.metody;
 //generate test
 //alt + enter
+
+import pl.sdacademy.java14poz.obiekty.Kanapka;
 
 /**
  * App
