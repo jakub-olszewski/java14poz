@@ -51,4 +51,8 @@ public class Kanapka {
     public String podajSklad(){
         return sklad;
     }
+
+    public String toString() {
+        return "sklad: " + sklad + " ilosc skladnikow: " + iloscSkladnikow;
+    }
 }
