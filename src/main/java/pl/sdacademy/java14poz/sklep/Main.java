@@ -15,6 +15,10 @@ public class Main {
         System.out.println(janusz.toString());
         System.out.println(janusz);
         System.out.println(kanapkazSzynka);
+
+        // zdanie stworz 5 zamowien i oblicz sume tych zamowień
+        // i wysietlic zamowienia na ekranie oraz sume zamowien
+        // trzeba zrobić metode toString() w zamowieniu
     }
 
 }
