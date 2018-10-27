@@ -7,20 +7,63 @@ package pl.sdacademy.java14poz.sklep;
  * @date: 21.10.2018 09:25
  **/
 public class User {
+    public String getImie() {
+        return imie;
+    }
+
+    public void setImie(String imie) {
+        this.imie = imie;
+    }
+
+    public String getNazwisko() {
+        return nazwisko;
+    }
+
+    public void setNazwisko(String nazwisko) {
+        this.nazwisko = nazwisko;
+    }
+
+    public int getWiek() {
+        return wiek;
+    }
+
+    public void setWiek(int wiek) {
+        this.wiek = wiek;
+    }
+
+    public Miasto getMiastoZamieszkania() {
+        return miastoZamieszkania;
+    }
+
+    public void setMiastoZamieszkania(Miasto miastoZamieszkania) {
+        this.miastoZamieszkania = miastoZamieszkania;
+    }
+
     // alt + insert
     // pola uzyte w uzytkowniku
-    String imie;
-    String nazwisko;
-    int wiek;
-    TypStatus status;
-    Miasto miastoZamieszkania;
+    private String imie;
+    private String nazwisko;
+    private int wiek;
+    private TypStatus status;
+    private Miasto miastoZamieszkania;
     public enum TypStatus {AKTYWNY,NIEAKTYWNY,ZALOGOWANY,NIE_ZALOGOWANY,LOCAL};
     enum Plec {MEZCZYZNA, KOBIETA,NIEOKRESLONA}
-    Plec plecUzytkownika;
-
+    private Plec plecUzytkownika;
 
     /**
-     * Konstruktor
+     * Konstruktor z argumentami
+     * @param podajImie
+     * @param podajNazwisko
+     * @param podajWiek
+     */
+    public User(String podajImie, String podajNazwisko, int podajWiek){
+        imie = podajImie;
+        nazwisko = podajNazwisko;
+        wiek = podajWiek;
+    }
+
+    /**
+     * Konstruktor bez argumentowy
      */
     public User() {
         //inicjalizujemy pola w konstruktorze
@@ -28,6 +71,7 @@ public class User {
         nazwisko = "nieznane";
         wiek = 0;
         plecUzytkownika = Plec.NIEOKRESLONA;
+        status = TypStatus.NIEAKTYWNY;
     }
 
     public String toString() {

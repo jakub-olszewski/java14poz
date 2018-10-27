@@ -1,4 +1,7 @@
 package pl.sdacademy.java14poz.sklep;
+// statyczny import do skrócenia zapisu User.TypStatus.*
+// do zapisu TypStatus.*
+import static pl.sdacademy.java14poz.sklep.User.*;
 
 /**
  * TestStatus
@@ -24,13 +27,13 @@ public class TestStatus {
 
         // jezeli uzytkownik jest
         // aktywny wypisz "imie nazwisko jest aktywny"
-        if(uzytkownik.getStatus()== User.TypStatus.AKTYWNY){
+        if(uzytkownik.getStatus()== TypStatus.AKTYWNY){
             System.out.println(uzytkownik+ " jest aktywny");
         }
 
         if (uzytkownik.getMiasto()== Miasto.POZNAN){
             System.out.println("uzytkownik lokalny" );
-            uzytkownik.setStatus(User.TypStatus.LOCAL);
+            uzytkownik.setStatus(TypStatus.LOCAL);
         }
 
     }

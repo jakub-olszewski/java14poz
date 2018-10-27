@@ -1,7 +1,10 @@
 package pl.sdacademy.java14poz.instrukcjaswitch;
-
+import pl.sdacademy.java14poz.sklep.Miasto;
 import pl.sdacademy.java14poz.sklep.User;
+import pl.sdacademy.java14poz.sklep.User.TypStatus;
+import pl.sdacademy.java14poz.sklep.UserUtils;
 
+import static pl.sdacademy.java14poz.sklep.User.TypStatus.NIE_ZALOGOWANY;
 /**
  * InstrSwitch
  *
@@ -11,10 +14,18 @@ import pl.sdacademy.java14poz.sklep.User;
 public class InstrSwitch {
     public static void main(String[] args) {
 
-        User uzytkownik = new User();
+        User janusz = new User("Janusz", "Typowy", 43);
+        janusz.setStatus(NIE_ZALOGOWANY);
 
-        User.TypStatus statusUzytkownika = uzytkownik.getStatus();
+        User uzytkownik = new User();// uzytkownik utworzony konstruktorem domyślnym
 
-        //switch ()
+        // uzycie metody statycznej z UserUtils
+        System.out.println("\n\nTest uzycia metody statycznej z UserUtils");
+        String napisStatusUzytkownika = UserUtils.pobierzStatus(uzytkownik);
+        System.out.println(napisStatusUzytkownika);
+
+        String napisStatusJanuszUzytkownika = UserUtils.pobierzStatus(janusz);
+        System.out.println(napisStatusJanuszUzytkownika);
+
     }
 }
