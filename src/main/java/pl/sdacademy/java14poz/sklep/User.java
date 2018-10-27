@@ -11,8 +11,8 @@ public class User {
     String imie;
     String nazwisko;
     int wiek;
-    String status;
-    enum Status {AKTYWNY,NIEAKTYWNY,ZALOGOWANY,NIE_ZALOGOWANY};
+    TypStatus status;
+    enum TypStatus {AKTYWNY,NIEAKTYWNY,ZALOGOWANY,NIE_ZALOGOWANY,LOCAL};
 
     /**
      * Konstruktor
@@ -27,12 +27,15 @@ public class User {
         return imie + " " + nazwisko + " " + wiek;
     }
 
-    public String getStatus(){
+    public TypStatus getStatus(){
         return status;
     }
 
-    public void setStatus(String status){
-        this.status = status;
+    public void setStatus(TypStatus ustawianyStatus){
+        // this - to jest klasa w ktorej jestesmy
+        // czyli User
+        // this.status - to pole status w uzytkowniku
+        this.status = ustawianyStatus;
     }
 
 }
