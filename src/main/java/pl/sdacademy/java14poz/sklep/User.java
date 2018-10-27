@@ -14,6 +14,9 @@ public class User {
     String status;
     enum Status {AKTYWNY,NIEAKTYWNY,ZALOGOWANY,NIE_ZALOGOWANY};
 
+    /**
+     * Konstruktor
+     */
     public User() {
         imie = "anonim";
         nazwisko = "nieznane";
