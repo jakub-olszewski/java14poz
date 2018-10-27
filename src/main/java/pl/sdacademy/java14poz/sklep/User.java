@@ -8,25 +8,30 @@ package pl.sdacademy.java14poz.sklep;
  **/
 public class User {
     // alt + insert
+    // pola uzyte w uzytkowniku
     String imie;
     String nazwisko;
     int wiek;
     TypStatus status;
-    NazwaMiasta miasto;
-    enum TypStatus {AKTYWNY,NIEAKTYWNY,ZALOGOWANY,NIE_ZALOGOWANY,LOCAL};
-    enum NazwaMiasta {POZNAN, KRAKOW, WROCLAW,WARSZAWA};
+    Miasto miastoZamieszkania;
+    public enum TypStatus {AKTYWNY,NIEAKTYWNY,ZALOGOWANY,NIE_ZALOGOWANY,LOCAL};
+    enum Plec {MEZCZYZNA, KOBIETA,NIEOKRESLONA}
+    Plec plecUzytkownika;
+
 
     /**
      * Konstruktor
      */
     public User() {
+        //inicjalizujemy pola w konstruktorze
         imie = "anonim";
         nazwisko = "nieznane";
         wiek = 0;
+        plecUzytkownika = Plec.NIEOKRESLONA;
     }
 
     public String toString() {
-        return imie + " " + nazwisko + " " + wiek;
+        return imie + " " + nazwisko + " " + wiek + " "+ plecUzytkownika.toString().toLowerCase();
     }
 
     public TypStatus getStatus(){
@@ -40,12 +45,21 @@ public class User {
         this.status = ustawianyStatus;
     }
 
-    public  NazwaMiasta getMiasto(){
-        return miasto;
+    public  Miasto getMiasto(){
+        return miastoZamieszkania;
     }
 
-    public  void setMiasto(NazwaMiasta ustawiamyMiasto){
-        this.miasto = ustawiamyMiasto;
+    public  void setMiasto(Miasto ustawiamyMiasto){
+        this.miastoZamieszkania = ustawiamyMiasto;
+    }
+
+    public Plec getPlecUzytkownika(){
+        return plecUzytkownika;
+    }
+
+    public void setPlecUzytkownika(Plec wybranaPlec){
+        this.plecUzytkownika = wybranaPlec;
+
     }
 
 }

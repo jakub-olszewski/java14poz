@@ -12,7 +12,7 @@ public class TestStatus {
 
 
         uzytkownik.setStatus(User.TypStatus.AKTYWNY);
-        uzytkownik.setMiasto(User.NazwaMiasta.KRAKOW);
+        uzytkownik.setMiasto(Miasto.KRAKOW);
         //uzytkownik.setMiasto(User.Miasto.POZNAN);
         // TODO
         // * utworzyć getter/setter miasto
@@ -28,7 +28,7 @@ public class TestStatus {
             System.out.println(uzytkownik+ " jest aktywny");
         }
 
-        if (uzytkownik.getMiasto()== User.NazwaMiasta.POZNAN){
+        if (uzytkownik.getMiasto()== Miasto.POZNAN){
             System.out.println("uzytkownik lokalny" );
             uzytkownik.setStatus(User.TypStatus.LOCAL);
         }
