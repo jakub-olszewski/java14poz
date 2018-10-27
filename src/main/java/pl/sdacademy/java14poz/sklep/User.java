@@ -12,7 +12,9 @@ public class User {
     String nazwisko;
     int wiek;
     TypStatus status;
+    NazwaMiasta miasto;
     enum TypStatus {AKTYWNY,NIEAKTYWNY,ZALOGOWANY,NIE_ZALOGOWANY,LOCAL};
+    enum NazwaMiasta {POZNAN, KRAKOW, WROCLAW,WARSZAWA};
 
     /**
      * Konstruktor
@@ -36,6 +38,14 @@ public class User {
         // czyli User
         // this.status - to pole status w uzytkowniku
         this.status = ustawianyStatus;
+    }
+
+    public  NazwaMiasta getMiasto(){
+        return miasto;
+    }
+
+    public  void setMiasto(NazwaMiasta ustawiamyMiasto){
+        this.miasto = ustawiamyMiasto;
     }
 
 }
