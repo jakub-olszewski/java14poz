@@ -11,6 +11,8 @@ public class User {
     String imie;
     String nazwisko;
     int wiek;
+    String status;
+    enum Status {AKTYWNY,NIEAKTYWNY,ZALOGOWANY,NIE_ZALOGOWANY};
 
     public User() {
         imie = "anonim";
@@ -20,6 +22,14 @@ public class User {
 
     public String toString() {
         return imie + " " + nazwisko + " " + wiek;
+    }
+
+    public String getStatus(){
+        return status;
+    }
+
+    public void setStatus(String status){
+        this.status = status;
     }
 
 }
