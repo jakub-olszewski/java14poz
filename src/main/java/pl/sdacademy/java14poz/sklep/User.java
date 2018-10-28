@@ -62,6 +62,12 @@ public class User {
         wiek = podajWiek;
     }
 
+    public User(String podajImie, String podajNazwisko){
+        imie = podajImie;
+        nazwisko = podajNazwisko;
+    }
+
+
     public User(String imie, String nazwisko, int wiek, Plec plecUzytkownika) {
         this.imie = imie;
         this.nazwisko = nazwisko;
@@ -83,6 +89,10 @@ public class User {
 
     public String toString() {
         return imie + " " + nazwisko + " " + wiek + " "+ plecUzytkownika.toString().toLowerCase();
+    }
+
+    public String pobierzImieINazwisko(){
+        return imie + " " + nazwisko;
     }
 
     public TypStatus getStatus(){
