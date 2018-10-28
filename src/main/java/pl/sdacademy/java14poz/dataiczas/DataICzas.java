@@ -1,5 +1,6 @@
 package pl.sdacademy.java14poz.dataiczas;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -14,55 +15,131 @@ import java.util.Date;
 public class DataICzas {
 
     public static void main(String[] args) {
-
-        // zmienna tekstowa z data ( dane wejsciowe )
-        String dateString1 = "2018-07-01";
-
-        // format wprowadzonej daty
-        String formatDaty = "yyyy-MM-dd";
-
-        // obiekt który pozwala formatowac date wedlug formatu
-        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern(formatDaty);
-
-        // parsowanie daty napisu na LocalDateTime
-        LocalDateTime formatDateTime1 = LocalDateTime.parse(dateString1, formatter1);
-
-        // instant time potrzebujemy do utworzenia Date (daty)
-        Instant instantTime = formatDateTime1.atZone(ZoneId.systemDefault())
-                .toInstant();
-        System.out.println(instantTime);
-
-        // zmienna date1 typu Date (data)
-        // date1 zawiera metody deprecated czyli należy używać LocalDateTime
-        Date date1 = java.util.Date.from(instantTime);
-        System.out.println(date1);
+        {
+            // data w formie napisu
+            String dataString = "2016-03-04 11:30";
+            // ustalamy format daty na podstawie daty wyżej
+            String formatDaty = "yyyy-MM-dd HH:mm";
+            LocalDateTime dataWczesniejsza = utworzDateZeStringa(dataString, formatDaty);
 
 
-//
-//
-//        LocalDateTime now = LocalDateTime.now();
-//        String dateString2 = "04.08.2015 07:42:00";
-//
-//        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//        String formatDateTimeString = now.format(formatter2);
-//        System.out.println(formatDateTimeString);
-//
-//
-//        // Konwersja String do Java Date
-//        DateTimeFormatter formatter3 = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
-//
-//        String dateString3 = "04.08.2015 07:42:00";
-//        LocalDateTime date3 = LocalDateTime.parse(dateString3, formatter3);
-//        System.out.println(date3);
+            // zadanie stworz druga data z obecnego dnia
+            // porownaj wykorzystujac metodę isAfter lub isBefore
+            // do sprawdzenia ktora data jest wczesniejsza
 
-//        DateTimeFormatter dtf = DateTimeFormatter.forPattern("yyyy-MM-dd");
-//        LocalDate dt = dtf.parseLocalDate(date);
-//
-//        // Konwersja String do Java Date
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
-//        String dateString = "04.08.2015 07:42:00";
-//        Date date = dateFormat.parse(dateString);
-//        System.out.println(date);
+            // przykład poniżej sprawdza dateTime (2016-03-04 11:30) jest
+            // po dacie (2016-03-04 11:30)
+            //dateTime.isAfter(dateTime)
 
+            String napisDataDzisiejsza = "2018-10-28 09:37";
+            LocalDateTime dataDzisiejsza = utworzDateZeStringa(napisDataDzisiejsza,formatDaty);
+
+            System.out.println("Porównanie daty dzisiejszej do wcześniejszej: ");
+
+            boolean jestWczesniejsza = dataWczesniejsza.isBefore(dataDzisiejsza);
+            //return - używamy gdy chcemy zwrócić dane w metodzie
+            //słowo te znajduje sie przeważnie nie końcu metody
+            //jeżeli metoda posiada void return nie występuje
+
+            if(jestWczesniejsza){
+                //ten fragment kodu wykonuje się keidy warunek po if jest spełniony
+                System.out.println("Dzisiejsza data jest późniejsza");
+                System.out.printf("Data %s jest późniejsza od daty %s", dataDzisiejsza, dataWczesniejsza);
+            }
+
+
+
+            /*
+            Teraz zajmiemy się przekształceniem daty na stringa
+            według naszego formatu
+             */
+            System.out.println("\n-----------------------------------------------------\n");
+            LocalDateTime obecnaData = LocalDateTime.now();
+            String formatDatyBiurej = "dd.MM.yyyy HH:mm";
+            // utworzenie formatera na podstawie wzorca formatDatyBiurowej
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatDatyBiurej);
+            // formater powyzej jest uzyty do sformatowania obecnej daty
+            String formatDatyBiurowejNapis = obecnaData.format(formatter);
+            System.out.printf("\nData dzisiejsza w formacie daty biurowej :\n%s \n",formatDatyBiurowejNapis);
+            System.out.printf("\nData dzisiejsza bez formatu :\n%s \n",obecnaData);
+
+
+            /*
+            Zadanie zamien napis "2016-03-04" na date
+             */
+            // utworzenie zmiennej data jako napis
+            String nowaData ="2016-03-04";
+            // utworzenie formatuDaty jako napis
+            String formatNowaData = "yyyy-MM-dd";
+            // utworzenie formatera
+            DateTimeFormatter formatterNowejDaty = DateTimeFormatter.ofPattern(formatNowaData);
+            // parsowanie
+            LocalDate naszaData = LocalDate.parse(nowaData,formatterNowejDaty);
+            // wypisanie daty
+            System.out.printf("\nNasza data to: %s\n",naszaData);
+
+
+
+
+
+
+
+
+            System.out.println("\nLocalDateTime:");
+            System.out.println(dataDzisiejsza);
+
+            Instant instantTime = dataDzisiejsza.atZone(ZoneId.systemDefault())
+                    .toInstant();
+            System.out.println("\nInstant time:");
+            System.out.println(instantTime);
+
+        }
+        // ponizej blok kodu od { do }
+        {
+            String dataString = "2016-03-04";
+            String formatDaty = "yyyy-MM-dd";
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatDaty);
+            LocalDate date = LocalDate.parse(dataString, formatter);
+
+            System.out.println("\nLocalDate:");
+            System.out.println(date);
+        }
+        {
+            String formatDaty = "yyyy-MM-dd HH:mm";
+
+        }
+        {
+            LocalDateTime teraz = LocalDateTime.now();
+            String formatDaty = "yyyy-MM-dd HH:mm:ss";
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatDaty);
+            String formatDateTimeString = teraz.format(formatter);
+            System.out.printf("\nFormat daty %s :\n",formatDaty);
+            System.out.println(formatDateTimeString);
+        }
+        {
+            String dateString = "04.08.2015 07:42:00";
+            String formatDaty = "dd.MM.yyyy HH:mm:ss";
+            LocalDateTime date = utworzDateZeStringa(dateString, formatDaty);
+            System.out.printf("\nFormat daty %s :\n",formatDaty);
+            System.out.println(date);
+        }
+
+    }
+
+    /**
+     * Metoda zamienia date w postaci napisu na LocalDateTime
+     * @param dataZPostaciNapisu
+     * @param formatDaty
+     * @return data
+     */
+    private static LocalDateTime utworzDateZeStringa(String dataZPostaciNapisu, String formatDaty) {
+        // tworzymy formater ktory przyjmuje argument 'formatDaty'
+        // ktory jest wzorcem daty
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatDaty);
+
+        // parsowanie(przeksztalcenie)
+        // napisu daty z uzyciem formatera w obiekt typu LocalDateTime
+        return LocalDateTime.parse(dataZPostaciNapisu, formatter);
     }
 }

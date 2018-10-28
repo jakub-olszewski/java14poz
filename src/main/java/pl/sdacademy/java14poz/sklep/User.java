@@ -47,7 +47,7 @@ public class User {
     private TypStatus status;
     private Miasto miastoZamieszkania;
     public enum TypStatus {AKTYWNY,NIEAKTYWNY,ZALOGOWANY,NIE_ZALOGOWANY,LOCAL};
-    enum Plec {MEZCZYZNA, KOBIETA,NIEOKRESLONA}
+    public enum Plec {MEZCZYZNA, KOBIETA,NIEOKRESLONA}
     private Plec plecUzytkownika;
 
     /**
@@ -60,6 +60,13 @@ public class User {
         imie = podajImie;
         nazwisko = podajNazwisko;
         wiek = podajWiek;
+    }
+
+    public User(String imie, String nazwisko, int wiek, Plec plecUzytkownika) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.wiek = wiek;
+        this.plecUzytkownika = plecUzytkownika;
     }
 
     /**

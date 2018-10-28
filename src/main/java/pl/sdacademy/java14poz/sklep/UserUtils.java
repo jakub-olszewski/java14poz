@@ -1,5 +1,6 @@
 package pl.sdacademy.java14poz.sklep;
 
+import static pl.sdacademy.java14poz.sklep.User.*;
 /**
  * UserUtils
  *
@@ -14,15 +15,14 @@ public class UserUtils {
      * @param uzytkownika
      * @return
      */
-    public static String pobierzStatus(User uzytkownik){
+    public static String pobierzStatus(User uzytkownik) {
         StringBuilder builder = new StringBuilder();
-        builder.append(uzytkownik.getImie()).append(" ");
-        builder.append(uzytkownik.getNazwisko()).append(" ");
+        builder.append(uzytkownik.getImie()).append(" ").append(uzytkownik.getNazwisko());
         builder.append(" jest ");
 
         // wykorzystac switch
         User.TypStatus status = uzytkownik.getStatus();
-        switch (status){
+        switch (status) {
             case AKTYWNY:
                 builder.append("aktywny");
                 break;
@@ -44,4 +44,28 @@ public class UserUtils {
 
         return builder.toString();
     }
+
+    public static String pobierzPlec(User uzytkownik){
+        StringBuilder rezultat = new StringBuilder();
+        rezultat.append(uzytkownik.getImie()).append(" ").append(uzytkownik.getNazwisko());
+        Plec plecPobranaOdUzytkownika = uzytkownik.getPlecUzytkownika();
+        rezultat.append(" jest ");
+
+        switch (plecPobranaOdUzytkownika){
+            case KOBIETA:
+                rezultat.append("kobietą");
+                break;
+            case NIEOKRESLONA:
+                rezultat.append("nie określony");
+                break;
+            case MEZCZYZNA:
+                rezultat.append("mężczyzną");
+                break;
+
+        }
+        return rezultat.toString();
+
+    }
+
+
 }
