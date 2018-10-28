@@ -72,7 +72,8 @@ public class DataICzas {
             // utworzenie formatuDaty jako napis
             String formatNowaData = "yyyy-MM-dd";
             // utworzenie formatera
-            DateTimeFormatter formatterNowejDaty = DateTimeFormatter.ofPattern(formatNowaData);
+            DateTimeFormatter formatterNowejDaty =
+                    DateTimeFormatter.ofPattern(formatNowaData);
             // parsowanie
             LocalDate naszaData = LocalDate.parse(nowaData,formatterNowejDaty);
             // wypisanie daty
